@@ -33,7 +33,9 @@ module.exports = function (grunt) {
       // configurable paths
       client: require('./bower.json').appPath || 'client',
       server: 'server',
-      dist: 'dist'
+      version: require('./package.json').version || '0.0.0',
+      dist: '<%= lodash.slugify(lodash.humanize(appname)) %>-<%%= yeoman.version %>',
+      host: 'docker.sidooo.com'
     },
     express: {
       options: {
@@ -420,6 +422,21 @@ module.exports = function (grunt) {
         cwd: '<%%= yeoman.client %>',
         dest: '.tmp/',
         src: ['{app,components}/**/*.css']
+      }
+    },
+
+    exec: {
+      tar: {
+        cmd: 'tar zcf <%%= yeoman.dist %>.tar.gz <%%= yeoman.dist %>'
+      },
+      copy: {
+        cmd: 'scp <%%= yeoman.dist %>.tar.gz root@<%%= yeoman.host %>:/root/'
+      },
+      extract: {
+        cmd: 'ssh root@<%%= yeoman.host %> tar zxvf <%%= yeoman.dist %>.tar.gz'
+      },
+      install: {
+        cmd: 'ssh root@<%%= yeoman.host %> "cd /root/<%%= yeoman.dist %> && chmod +x install && ./install"'
       }
     },
 
@@ -933,5 +950,13 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'default',
+    'exec:tar',
+    'exec:copy',
+    'exec:extract',
+    'exec:install'
   ]);
 };

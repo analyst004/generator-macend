@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#BASE=`dirname $0`
+#echo $base
+
+#cd $base
+pwd
+
+echo "npm install "
+npm install
+if [ $? -ne 0 ]; then
+  echo "npm install fail"
+  exit 1
+fi
+
+echo "build container"
+docker build -t <%= lodash.slugify(lodash.humanize(appname)) %> .
+if [ $? -ne 0 ]; then
+  echo "build container fail"
+  exit 1
+fi
+
+echo "restart container"
+docker stop <%= lodash.slugify(lodash.humanize(appname)) %>
+docker rm <%= lodash.slugify(lodash.humanize(appname)) %>
+docker run --name <%= lodash.slugify(lodash.humanize(appname)) %> -d -p 8086:8086 --restart=always word
+if [ $? -ne 0 ]; then
+  echo "restart container fail"
+  exit 1
+fi

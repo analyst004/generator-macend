@@ -32,3 +32,7 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+## Deployment
+
+Running `grunt deploy` will build, test and deploy it on remote host.
