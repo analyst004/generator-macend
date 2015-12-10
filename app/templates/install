@@ -23,7 +23,7 @@ fi
 echo "restart container"
 docker stop <%= lodash.slugify(lodash.humanize(appname)) %>
 docker rm <%= lodash.slugify(lodash.humanize(appname)) %>
-docker run --name <%= lodash.slugify(lodash.humanize(appname)) %> -d -p 8086:8086 --restart=always word
+docker run --name <%= lodash.slugify(lodash.humanize(appname)) %> -d -p 8086:8086 --restart=always <%= lodash.slugify(lodash.humanize(appname)) %>
 if [ $? -ne 0 ]; then
   echo "restart container fail"
   exit 1
