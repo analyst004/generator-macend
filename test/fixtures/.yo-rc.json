@@ -1,5 +1,5 @@
 {
-  "generator-angular-fullstack": {
+  "generator-macend": {
     "endpointDirectory": "server/api/",
     "insertRoutes": true,
     "registerRoutesFile": "server/routes.js",

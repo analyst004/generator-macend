@@ -2,23 +2,23 @@ Description:
   Creates a Full-Stack AngularJS + Node app
 
 Example:
-  yo angular-fullstack
+  yo macend
 
 Sub Generators:
 
   Server Side:
-    angular-fullstack:endpoint
+    macend:endpoint
 
   Client Side:
-    angular-fullstack:route
-    angular-fullstack:controller
-    angular-fullstack:filter
-    angular-fullstack:directive
-    angular-fullstack:service
-    angular-fullstack:provider
-    angular-fullstack:factory
-    angular-fullstack:decorator
+    macend:route
+    macend:controller
+    macend:filter
+    macend:directive
+    macend:service
+    macend:provider
+    macend:factory
+    macend:decorator
 
   Deployment:
-    angular-fullstack:openshift
-    angular-fullstack:heroku
+    macend:openshift
+    macend:heroku

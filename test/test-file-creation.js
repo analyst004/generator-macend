@@ -9,7 +9,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var recursiveReadDir = require('recursive-readdir');
 
-describe('angular-fullstack generator', function () {
+describe('macend generator', function () {
   var gen, defaultOptions = {
     buildtool: 'grunt',
     script: 'js',
@@ -33,7 +33,7 @@ describe('angular-fullstack generator', function () {
     gen.run(function () {
       var afGenerator;
       var deps = [path.join('../..', generatorType)];
-      afGenerator = helpers.createGenerator('angular-fullstack:' + generatorType, deps, [name], {
+      afGenerator = helpers.createGenerator('macend:' + generatorType, deps, [name], {
         skipInstall: true
       });
 
@@ -348,7 +348,7 @@ describe('angular-fullstack generator', function () {
         return done(err);
       }
 
-      gen = helpers.createGenerator('angular-fullstack:app', deps, [], {
+      gen = helpers.createGenerator('macend:app', deps, [], {
         skipInstall: true
       });
       done();
@@ -466,7 +466,7 @@ describe('angular-fullstack generator', function () {
       it('should use existing config if available', function(done) {
         this.timeout(60000);
         copySync(__dirname + '/fixtures/.yo-rc.json', __dirname + '/temp/.yo-rc.json');
-        var gen = helpers.createGenerator('angular-fullstack:app', [
+        var gen = helpers.createGenerator('macend:app', [
           '../../app',
           '../../endpoint',
           [

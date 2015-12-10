@@ -1,24 +1,24 @@
 # AngularJS Full-Stack generator
 ![Build Status](https://codeship.com/projects/26128390-800a-0133-c5f7-6a23b0487a18/status?branch=master)
-[![npm version](https://badge.fury.io/js/generator-angular-fullstack.svg)](http://badge.fury.io/js/generator-angular-fullstack)
-[![Dependency Status](https://david-dm.org/angular-fullstack/generator-angular-fullstack.svg)](https://david-dm.org/angular-fullstack/generator-angular-fullstack)
-[![Dev-Dependency Status](https://david-dm.org/angular-fullstack/generator-angular-fullstack/dev-status.svg)](https://david-dm.org/angular-fullstack/generator-angular-fullstack#info=devDependencies)
-[![Gitter chat](https://badges.gitter.im/DaftMonk/generator-angular-fullstack.svg)](https://gitter.im/DaftMonk/generator-angular-fullstack)
+[![npm version](https://badge.fury.io/js/generator-macend.svg)](http://badge.fury.io/js/generator-macend)
+[![Dependency Status](https://david-dm.org/macend/generator-macend.svg)](https://david-dm.org/macend/generator-macend)
+[![Dev-Dependency Status](https://david-dm.org/macend/generator-macend/dev-status.svg)](https://david-dm.org/macend/generator-macend#info=devDependencies)
+[![Gitter chat](https://badges.gitter.im/analyst004/generator-macend.svg)](https://gitter.im/analyst004/generator-macend)
 > Yeoman generator for creating MEAN stack applications, using MongoDB, Express, AngularJS, and Node - lets you quickly set up a project following best practices.
 
-#### Generated project: 
-[![Dependency Status](https://david-dm.org/angular-fullstack/angular-fullstack-deps.svg)](https://david-dm.org/angular-fullstack/angular-fullstack-deps)
-[![Dev-Dependency Status](https://david-dm.org/angular-fullstack/angular-fullstack-deps/dev-status.svg)](https://david-dm.org/angular-fullstack/angular-fullstack-deps#info=devDependencies)
+#### Generated project:
+[![Dependency Status](https://david-dm.org/macend/angular-fullstack-deps.svg)](https://david-dm.org/macend/angular-fullstack-deps)
+[![Dev-Dependency Status](https://david-dm.org/macend/angular-fullstack-deps/dev-status.svg)](https://david-dm.org/macend/angular-fullstack-deps#info=devDependencies)
 
 ## Example project
 
-Source code: https://github.com/DaftMonk/fullstack-demo
+Source code: https://github.com/analyst004/fullstack-demo
 
 ## Usage
 
-Install `yo`, `grunt-cli`, `bower`, and `generator-angular-fullstack`:
+Install `yo`, `grunt-cli`, `bower`, and `generator-macend`:
 ```
-npm install -g yo grunt-cli bower generator-angular-fullstack
+npm install -g yo grunt-cli bower generator-macend
 ```
 
 Make a new directory, and `cd` into it:
@@ -26,9 +26,9 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo angular-fullstack`, optionally passing an app name:
+Run `yo macend`, optionally passing an app name:
 ```
-yo angular-fullstack [app-name]
+yo macend [app-name]
 ```
 
 Run `grunt` for building, `grunt serve` for preview, and `grunt serve:dist` for a preview of the built app.
@@ -42,7 +42,7 @@ Run `grunt` for building, `grunt serve` for preview, and `grunt serve:dist` for 
 **General**
 
 * Build Systems: `Grunt`, `Gulp` (experimental)
-* Testing: 
+* Testing:
   * `Jasmine`
   * `Mocha + Chai + Sinon`
     * Chai assertions:
@@ -84,21 +84,21 @@ A grunt task looks for new files in your `client/app` and `client/components` fo
 Available generators:
 
 * App
-    - [angular-fullstack](#app) (aka [angular-fullstack:app](#app))
+    - [macend](#app) (aka [macend:app](#app))
 * Server Side
-    - [angular-fullstack:endpoint](#endpoint)
+    - [macend:endpoint](#endpoint)
 * Client Side
-    - [angular-fullstack:route](#route)
-    - [angular-fullstack:controller](#controller)
-    - [angular-fullstack:filter](#filter)
-    - [angular-fullstack:directive](#directive)
-    - [angular-fullstack:service](#service)
-    - [angular-fullstack:provider](#service)
-    - [angular-fullstack:factory](#service)
-    - [angular-fullstack:decorator](#decorator)
+    - [macend:route](#route)
+    - [macend:controller](#controller)
+    - [macend:filter](#filter)
+    - [macend:directive](#directive)
+    - [macend:service](#service)
+    - [macend:provider](#service)
+    - [macend:factory](#service)
+    - [macend:decorator](#decorator)
 * Deployment
-    - [angular-fullstack:openshift](#openshift)
-    - [angular-fullstack:heroku](#heroku)
+    - [macend:openshift](#openshift)
+    - [macend:heroku](#heroku)
 
 ### App
 Sets up a new AngularJS + Express app, generating all the boilerplate you need to get started.
@@ -106,7 +106,7 @@ Sets up a new AngularJS + Express app, generating all the boilerplate you need t
 Usage:
 ```bash
 Usage:
-  yo angular-fullstack:app [options] [<name>]
+  yo macend:app [options] [<name>]
 
 Options:
   -h,   --help          # Print the generator's options and usage
@@ -121,7 +121,7 @@ Arguments:
 
 Example:
 ```bash
-yo angular-fullstack
+yo macend
 ```
 
 ### Endpoint
@@ -130,7 +130,7 @@ Generates a new API endpoint.
 Usage:
 ```bash
 Usage:
-  yo angular-fullstack:endpoint [options] <name>
+  yo macend:endpoint [options] <name>
 
 Options:
   -h,   --help               # Print the generator's options and usage
@@ -145,7 +145,7 @@ Arguments:
 
 Example:
 ```bash
-yo angular-fullstack:endpoint message
+yo macend:endpoint message
 [?] What will the url of your endpoint be? /api/messages
 ```
 
@@ -164,7 +164,7 @@ Generates a new route.
 
 Example:
 ```bash
-yo angular-fullstack:route myroute
+yo macend:route myroute
 [?] Where would you like to create this route? client/app/
 [?] What will the url of your route be? /myroute
 ```
@@ -183,7 +183,7 @@ Generates a controller.
 
 Example:
 ```bash
-yo angular-fullstack:controller user
+yo macend:controller user
 [?] Where would you like to create this controller? client/app/
 ```
 
@@ -197,7 +197,7 @@ Generates a directive.
 
 Example:
 ```bash
-yo angular-fullstack:directive myDirective
+yo macend:directive myDirective
 [?] Where would you like to create this directive? client/app/
 [?] Does this directive need an external html file? Yes
 ```
@@ -213,7 +213,7 @@ Produces:
 
 Example:
 ```bash
-yo angular-fullstack:directive simple
+yo macend:directive simple
 [?] Where would you like to create this directive? client/app/
 [?] Does this directive need an external html file? No
 ```
@@ -228,7 +228,7 @@ Generates a filter.
 
 Example:
 ```bash
-yo angular-fullstack:filter myFilter
+yo macend:filter myFilter
 [?] Where would you like to create this filter? client/app/
 ```
 
@@ -242,7 +242,7 @@ Generates an AngularJS service.
 
 Example:
 ```bash
-yo angular-fullstack:service myService
+yo macend:service myService
 [?] Where would you like to create this service? client/app/
 ```
 
@@ -252,14 +252,14 @@ Produces:
     client/app/myService/myService.service.spec.js
 
 
-You can also do `yo angular-fullstack:factory` and `yo angular-fullstack:provider` for other types of services.
+You can also do `yo macend:factory` and `yo macend:provider` for other types of services.
 
 ### Decorator
 Generates an AngularJS service decorator.
 
 Example:
 ```bash
-yo angular-fullstack:decorator serviceName
+yo macend:decorator serviceName
 [?] Where would you like to create this decorator? client/app/
 ```
 
@@ -271,7 +271,7 @@ Produces
 
 Deploying to OpenShift can be done in just a few steps:
 
-    yo angular-fullstack:openshift
+    yo macend:openshift
 
 A live application URL will be available in the output.
 
@@ -308,7 +308,7 @@ Commit and push the resulting build, located in your dist folder:
 
 Deploying to heroku only takes a few steps.
 
-    yo angular-fullstack:heroku
+    yo macend:heroku
 
 To work with your new heroku app using the command line, you will need to run any `heroku` commands from the `dist` folder.
 
@@ -452,7 +452,7 @@ An example server component in `server/api`
 
 ## Contribute
 
-See the [contributing docs](https://github.com/DaftMonk/generator-angular-fullstack/blob/master/contributing.md)
+See the [contributing docs](https://github.com/analyst004/generator-macend/blob/master/contributing.md)
 
 This project has 2 main branches: `master` and `canary`. The `master` branch is where the current stable code lives and should be used for production setups. The `canary` branch is the main development branch, this is where PRs should be submitted to (backport fixes may be applied to `master`).
 

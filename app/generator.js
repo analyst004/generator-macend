@@ -416,7 +416,7 @@ export default class Generator extends Base {
         } else if (this.filters.sequelizeModels) {
           models = 'sequelize';
         }
-        this.composeWith('angular-fullstack:endpoint', {
+        this.composeWith('macend:endpoint', {
           options: {
             route: '/api/things',
             models: models

@@ -14,7 +14,7 @@ To run the generator:
 1. Clone it and `cd` to its root
 2. `npm install`
 3. `npm link` (tells NPM to look to your own version)
-4. `yo angular-fullstack` as normal. It should run from your cloned version rather than the one downloaded from NPM.
+4. `yo macend` as normal. It should run from your cloned version rather than the one downloaded from NPM.
 
 ## Git Commit Guidelines
 
@@ -85,7 +85,7 @@ $ git push && npm publish
 $ cd ..
 ```
 
-* Push and publish `generator-angular-fullstack`.
+* Push and publish `generator-macend`.
 ```bash
 $ git push && git push --tags
 $ npm publish

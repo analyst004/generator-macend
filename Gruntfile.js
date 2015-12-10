@@ -212,7 +212,7 @@ module.exports = function (grunt) {
         ]
       ];
 
-      var gen = helpers.createGenerator('angular-fullstack:app', deps);
+      var gen = helpers.createGenerator('macend:app', deps);
 
       helpers.mockPrompt(gen, options);
       gen.run({}, function () {
